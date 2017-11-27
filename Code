@@ -86,7 +86,13 @@ digitalWrite(5,LOW);
 
     }
 
-
+  // Write to ThingSpeak. There are up to 8 fields in a channel, allowing you to store up to 8 different
+  // pieces of information in a channel.  Here, we write to field 1.
+ThingSpeak.writeField(myChannelNumber,1,temp,myWriteAPIKey);
+ThingSpeak.writeField(myChannelNumber,2,diastolicc,myWriteAPIKey);
+ThingSpeak.writeField(myChannelNumber,3,systolicc,myWriteAPIKey);
+ThingSpeak.writeField(myChannelNumber,4,bpmm,myWriteAPIKey);
+delay(10000); // ThingSpeak will only accept updates every 10 seconds.
 }
 
 
