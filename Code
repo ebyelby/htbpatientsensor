@@ -25,4 +25,17 @@ char diastolic[3];intdiastolicc=0;
 char systolic[3];intsystolicc=0;
 int j=0;
 
+void setup() 
+{
+
+  #if defined(ARDUINO_ARCH_ESP8266)
+WiFi.begin(ssid, pass);
+    #else
+Ethernet.begin(mac);
+    #endif
+  #endif
+
+ThingSpeak.begin(client);
+pinMode(5,OUTPUT);
+}
 
