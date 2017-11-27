@@ -39,3 +39,42 @@ ThingSpeak.begin(client);
 pinMode(5,OUTPUT);
 }
 
+void loop() {
+
+while (Serial.available() > 0) 
+	{
+
+		for(inti=0;i<10;i++)
+		{
+			a[i]=Serial.read();
+
+		}
+		j=0;
+		for(inti=0;i<=1;i++)
+		{
+			bpm[j] = a[i];
+			j++;
+		}
+		bpm[j]='\0';
+		bpmm=atoi(bpm);
+		j=0;
+		for(inti=3;i<=5;i++)
+		{
+			diastolic[j]=a[i];
+			j++;
+		}
+		diastolic[j]='\0';
+		diastolicc=atoi(diastolic);
+		j=0;
+		for(inti=7;i<=9;i++)
+		{
+			systolic[j]=a[i];
+			j++;
+		}
+		systolic[j]='\0';
+		systolicc=atoi(systolic);
+    }
+
+}
+
+
