@@ -12,3 +12,9 @@ int status = WL_IDLE_STATUS;
 WiFiClient  client;
 #endif
 
+#if ARDUINO_ARCH_ESP8266
+  // On ESP8266:  0 - 1023 maps to 0 - 1 volts
+  #define VOLTAGE_MAX 1.0
+  #define VOLTAGE_MAXCOUNTS 1023.0
+#endif
+
