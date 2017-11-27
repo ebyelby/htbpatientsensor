@@ -17,4 +17,12 @@ WiFiClient  client;
   #define VOLTAGE_MAX 1.0
   #define VOLTAGE_MAXCOUNTS 1023.0
 #endif
+unsigned long myChannelNumber = 362111;
+const char * myWriteAPIKey = "SLTC6XF2ZT6QW6D7";
+char a[10];
+char bpm[3]; intbpmm=0;
+char diastolic[3];intdiastolicc=0;
+char systolic[3];intsystolicc=0;
+int j=0;
+
 
